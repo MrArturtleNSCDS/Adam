@@ -1,3 +1,5 @@
+<?php
+
 $userid = $_POST['userid'];
         $skillid = $_POST['skillid'];
         $newbucket = $_POST['newbucket'];
@@ -31,3 +33,10 @@ $userid = $_POST['userid'];
         $updateSkillQuery = query($updateSkillString,$dbHandle);
         
         echo 1;
+
+
+function query($queryString, $handle){
+	$tempQuery = $handle->query($queryString) or die($queryString." ".$handle->error);
+	return $tempQuery;
+}
+?>
