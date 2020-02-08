@@ -1,47 +1,44 @@
-<?php
-require "connect.php";
+//This is my Js to send it to the PHP
 
-$action = $_POST['action'];
+function checkInfo(first_, last_, email_){
+    var requestName = $.ajax({
+        url: "queries.php",
+        type: "POST",
+        data: {action:"check",firstCheck:first_, lastCheck:last_, emailCheck:email_},
+        dataType: "text"
+    });
 
-switch($action){
+    checkInfo.done(function(success){
+       // if(success==="1"){
+            console.log(success);
+        //}
+    });
 
-    case 'insert':
-        $firstname = $_POST['first'];
-        $lastname = $_POST['last'];
-            
-        echo "$firstname $lastname";
-        $insertName = 
-                    "INSERT INTO users (First, Last) 
-                    VALUES ('$firstname','$lastname')";
-
-        query($insertName, $dbHandle);
-
-        echo 1;
-    break;
-
-    case 'recieve':
-        $userId = $_POST['user'];
-        $infoString = "";
-        $getInfo =  "SELECT users.First, users.Last,
-                    waiting_list.Stall, waiting_list.Start_Time, waiting_list.End_Time FROM `users` 
-                    INNER JOIN waiting_list ON users.User_ID = waiting_list.User_ID";
-        $infoQuery = query($getInfo, $dbHandle);
-        while($infoString = $infoString->fetch_array()){
-            $infoString .= 
-                $first = $infoString['first'];
-                $last = $infoString['last'];
-                $stall = $infoString['stall'];
-                $start = $infoString['start_time'];
-                $end = $infoString['end_time'];
-                $infoString .=;
-        }
-
-        echo userXML;
-    break;
+    checkInfo.fail(function(jqXHR, textStatus) {
+        alert( "Request failed: " + textStatus + " " + jqXHR.responseText);
+    });
 }
 
-function query($queryString, $handle){
-	$tempQuery = $handle->query($queryString) or die($queryString." ".$handle->error);
-	return $tempQuery;
+
+//This is my Google login Js that get the information
+
+function onSuccess(googleUser) {
+    var first_ = googleUser.getBasicProfile().getGivenName();
+    var last_ = googleUser.getBasicProfile().getFamilyName();
+    var email_ = googleUser.getBasicProfile().getEmail();
+    checkInfo(first_,last_,email_);
 }
->?
+    function onFailure(error) {
+    console.log(error);
+    }
+    function renderButton() {
+    gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+    });
+    }
