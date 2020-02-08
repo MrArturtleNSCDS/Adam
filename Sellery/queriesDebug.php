@@ -42,3 +42,22 @@ function onSuccess(googleUser) {
         'onfailure': onFailure
     });
     }
+
+
+//Here is the PHP for the case 'check'
+
+switch($action){
+    case 'check':
+        $first = $_POST['firstCheck'];
+        $last = $_POST['lastCheck'];
+        $email = $_POST['emailCheck'];
+
+        $check = "SELECT * FROM `users` 
+        WHERE First='$first' AND Last='$last' AND Email='$email';
+
+        if($check){
+
+        } else{
+            getName();
+        }
+    break;
