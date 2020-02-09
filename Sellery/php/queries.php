@@ -12,12 +12,11 @@ switch($action){
 
         $check = "SELECT * FROM `users` 
         WHERE First='$first' AND Last='$last' AND Email='$email'";
-        printf($check);
         $result = mysqli_query($dbHandle, $check);
-        if(mysqli_num_rows($result)>= 1){
-                printf("Number of rows in the table : " . mysqli_num_rows($result));
+        if(mysqli_num_rows($result)> 0){
+            printf("This is an existing User");
         }else{
-            echo 1;
+            printf("New user");
         }
     break;
 
