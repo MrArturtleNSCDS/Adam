@@ -47,7 +47,7 @@
 
                 <div id="registerPage">
                     <div id ="welcomeRegister" class='Text' style="font-size:5vw;">Welcome...</div>
-                    <div id="fname" class='name allCheckBoxes' style="font-size:5vw;">CatherineJcole</div>
+                    <div id="fname" class='name allCheckBoxes' style="font-size:5vw;"></div>
                     <div id="lname" class= 'name allCheckBoxes' style="font-size:3vw;"></div>
                     <div id='switchboygirl'>
                         <div id="areYou" class='Text' style="font-size:4vw;">What are you?</div>
