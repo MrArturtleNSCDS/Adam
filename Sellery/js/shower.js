@@ -87,7 +87,7 @@ function getName(){
       }
 
     var requestName = $.ajax({
-        url: "queries.php",
+        url: "php/queries.php",
         type: "POST",
         data: {action:"insert",first:firstName, last:lastName, gender:gender_},
         dataType: "text"
@@ -108,7 +108,7 @@ function getName(){
 function getInfo(){
     var userId = $("#user").val();
     var getInfo = $.ajax({
-        url: "queries.php",
+        url: "php/queries.php",
         type: "POST",
         data: {action:"recieve",user:userId},
         dataType: "xml"
@@ -146,7 +146,7 @@ function getInfo(){
 
 function checkInfo(first_, last_, email_){
     var checkI = $.ajax({
-        url: "queries.php",
+        url: "php/queries.php",
         type: "POST",
         data: {action:"check",firstCheck:first_, lastCheck:last_, emailCheck:email_},
         dataType: "text"
