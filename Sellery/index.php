@@ -4,26 +4,27 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="https://kit.fontawesome.com/f5406f8a6e.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="153584192754-qbp9uaam50pg8slsps3k0ig7t5u8788k.apps.googleusercontent.com">
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-		<script src="Js/g+login.js" type="text/javascript" ></script>
-<link rel= 'stylesheet' href= 'CSS/shower.css'>
-    <title>Wisconsin Shower Sellery</title>
-</head>
-    <div id ="main">
-    <div id= "barWrapper">
-        <div id = "bar1" class = bara></div>
-        <div id = "bar2" class = barb></div>
-        <div id = "bar3" class = bara></div>
-        <div id = "bar4" class = barb></div>
-    </div>
-        <img src="Madison.jpg" class= "campusPic" alt="campusP" width=100% height=20%>
+    <head>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/f5406f8a6e.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="153584192754-qbp9uaam50pg8slsps3k0ig7t5u8788k.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="Js/g+login.js" type="text/javascript" ></script>
+        <link rel= 'stylesheet' href= 'CSS/shower.css'>
+        <title>Wisconsin Shower Sellery</title>
+    </head>
+    <body>
+        <div id ="main">
+        <div id= "barWrapper">
+            <div id = "bar1" class = bara></div>
+            <div id = "bar2" class = barb></div>
+            <div id = "bar3" class = bara></div>
+            <div id = "bar4" class = barb></div>
+        </div>
+        <img src="images/Madison.jpg" class= "campusPic" alt="campusP" width=100% height=20%>
         <div id="sidebar1">
             <div class="sidebar">
                 <div id = "home1"><a href="#home"><i class="fas fa-home"></i> Home</a></div>
@@ -33,7 +34,7 @@
             </div>
         </div>
         <div id='logWrapper'>
-            <img src="WisconsinShower.png" id="background" alt="" class="center">
+            <img src="images/WisconsinShower.png" id="background" alt="" class="center">
             <div id='mainText' style="font-size:8vw;" class='Text'>Sellery Shower</div>
             
             
@@ -82,7 +83,7 @@
                         </label>
                     </div>
                 </div>
-            <button id="sumbitB" button class="fsSubmitButton" style="font-size:5vw;">Submit</div>
+                <button id="sumbitB" button class="fsSubmitButton" style="font-size:5vw;">Submit</div>
             </div>
 
             <div id="info">
