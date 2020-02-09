@@ -22,14 +22,7 @@ function hideElements(element){
 function showElements(element){
     $(element).delay(1800).fadeIn();
 }
-function home(){
-    //transition();
-    showElements(registry);
-    hideElements(contact);
-    hideElements(other);
-    hideElements(welcome);
-    hideElements(info);
-}
+
 $("#home1").click(function(){
     //transition();
     showElements(registry);
