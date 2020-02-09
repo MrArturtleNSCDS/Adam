@@ -4,12 +4,12 @@ var email_;
 
 
 function onSuccess(googleUser) {
-    home();
-    firstN = googleUser.getBasicProfile().getGivenName();
-    lastN = googleUser.getBasicProfile().getFamilyName();
-    email_ = googleUser.getBasicProfile().getEmail(); 
+    first_ = googleUser.getBasicProfile().getGivenName();
+    last_ = googleUser.getBasicProfile().getFamilyName();
+    email_ = googleUser.getBasicProfile().getEmail();
+    checkInfo(first_,last_,email_);
 }
-function onFailure(error) {
+    function onFailure(error) {
     console.log(error);
     }
     function renderButton() {
@@ -22,4 +22,4 @@ function onFailure(error) {
         'onsuccess': onSuccess,
         'onfailure': onFailure
     });
-}
+    }
