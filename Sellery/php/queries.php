@@ -9,38 +9,49 @@ switch($action){
         $first = $_POST['firstCheck'];
         $last = $_POST['lastCheck'];
         $email = $_POST['emailCheck'];
-
         $check = "SELECT * FROM `users` 
         WHERE First='$first' AND Last='$last' AND Email='$email'";
-        $result = mysqli_query($dbHandle, $check);
-        if(mysqli_num_rows($result)> 0){
-            printf("This is an existing User");
+        $result = query($check, $dbHandle);
+        if($curResult = $result->fetch_array()){
+            echo $curResult['Gender'];
+            
         }else{
-            printf("New user");
+           
+            echo -1;
         }
+
     break;
 
     case 'insert':
         $firstname = $_POST['first'];
         $lastname = $_POST['last'];
         $gender = $_POST['gender'];
+        $email = $_POST['email'];
             
         echo "$firstname $lastname";
         $insertName = 
-                    "INSERT INTO users (First, Last, Gender) 
-                    VALUES ('$firstname','$lastname','$gender')";
+                    "INSERT INTO users (First, Last, Gender, Email) 
+                    VALUES ('$firstname','$lastname','$gender', '$email')";
 
         query($insertName, $dbHandle);
 
         echo 1;
     break;
 
-    case 'recieve':
-        $userId = $_POST['user'];
+    case 'waitingListInsert':
+        $stall = $_POST['stall'];
+        $insertWaitingList =
+                            "INSERT INTO waiting_list (First, Last, Gender, Email) 
+                            VALUES ('$firstname','$lastname','$gender', '$email')";
+
+
+    case 'showerInfo':
+        $gender = $_POST['gender'];
         $infoString = "<users>";
         $getInfo =  "SELECT users.First, users.Last,
                     waiting_list.Stall, waiting_list.Start_Time, waiting_list.End_Time FROM `users` 
-                    INNER JOIN waiting_list ON users.User_ID = waiting_list.User_ID";
+                    INNER JOIN waiting_list ON users.User_ID = waiting_list.User_ID
+                    WHERE Gender = $gender";
         $infoQuery = query($getInfo, $dbHandle);
         while($infoResult=$infoQuery->fetch_array()){ 
                 $first = $infoResult['First'];
