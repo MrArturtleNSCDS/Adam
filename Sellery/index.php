@@ -7,6 +7,7 @@
     <head>
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="https://kit.fontawesome.com/f5406f8a6e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
@@ -94,21 +95,16 @@
                         <div class="grid-item" style="font-size:3vw;">3</div>
                         <div class="grid-item" style="font-size:3vw;">4</div>
                         <div class="grid-item" style="font-size:3vw;">5</div>
-                        <div class="grid-item" style="font-size:3vw;" stall='1'>
-                        
-                        </div>
-                        <div class="grid-item" style="font-size:3vw;" stall='2'>
-                            <div class='stallUser'>First_ 15</div>
-                        </div>
+                        <div class="grid-item" style="font-size:3vw;" stall='1'></div>
+                        <div class="grid-item" style="font-size:3vw;" stall='2'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='3'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='4'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='5'></div>
-                        <button id = "1" class = "button1">Sign in on Stall 1</button>
-                        <button id = "2" class = "button1">Sign in on Stall 2</button>
-                        <button id = "3" class = "button1">Sign in on Stall 3</button>
-                        <button id = "4" class = "button1">Sign in on Stall 4</button>
-                        <button id = "5" class = "button1">Sign in on Stall 5</button>
-
+                        <button id = "1" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 1</button>
+                        <button id = "2" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 2</button>
+                        <button id = "3" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 3</button>
+                        <button id = "4" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 4</button>
+                        <button id = "5" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 5</button>
                     </div>
                     <div class="drop"></div>
                 </div>
@@ -121,6 +117,29 @@
                 </div>
             </div>
         </div>
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content w3-modal-content w3-animate-zoom">
+                <div class="w3-container">
+                <span onclick="document.getElementById('id01').style.display='none'"
+                class="w3-button w3-display-topright">&times;</span>
+                <p>Start</p>
+                <input type = "text" placeholder = "Hours" stlye = "width:2vh;height:2vh;"></input>
+                <input type = "text" placeholder = "Minutes" stlye = "width:2vh;height:2vh;"></input>
+                <div id="radioButton">
+                            <label class="container modalRadioText" style="font-size:3vw;">AM
+                                <input type="radio" checked="checked" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container modalRadioText animate" style="font-size:3vw;">PM
+                                <input type="radio" name="radio">
+                                <span class="checkmark"></span>
+                            </label>
+
+                <p>Some text in the Modal..</p>
+            </div>
+         </div>
+</div>
+    
     </body>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
     <script src='Js/shower.js'></script>

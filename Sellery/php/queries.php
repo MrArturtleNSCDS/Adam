@@ -47,10 +47,16 @@ switch($action){
 
     case 'waitingListInsert':
         $stall = $_POST['stall'];
-        $insertWaitingList =
-                            "INSERT INTO waiting_list (First, Last, Gender, Email) 
-                            VALUES ('$firstname','$lastname','$gender', '$email')";
+        $userID = $_POST['userID'];
 
+        $insertWaitingList =
+                            "INSERT INTO waiting_list (Stall, User_ID) 
+                            VALUES ('$stall', '$userID')";
+
+        query($insertWaitingList, $dbHandle);
+        
+        echo 1;
+    break;
 
     case 'showerInfo':
         $gender = $_POST['gender'];

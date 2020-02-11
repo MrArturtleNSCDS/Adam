@@ -223,14 +223,14 @@ function waitingListInsert(stall_){
     var waitingList = $.ajax({
         url: "php/queries.php",
         type: "POST",
-        data: {action:"waitingListInsert", stall:stall_},
+        data: {action:"waitingListInsert", stall:stall_, userID:userID_},
         dataType: "text"
     });
 
     waitingList.done(function(success){
-       // if(success==="1"){
+        if(success==="1"){
             console.log(success);
-        //}
+        }
     });
 
     waitingList.fail(function(jqXHR, textStatus) {
