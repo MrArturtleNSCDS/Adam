@@ -11,15 +11,19 @@ switch($action){
         $email = $_POST['emailCheck'];
         $check = "SELECT * FROM `users` 
         WHERE First='$first' AND Last='$last' AND Email='$email'";
-        $result = query($check, $dbHandle);
-        if($curResult = $result->fetch_array()){
-            echo $curResult['Gender'];
-            
-        }else{
-           
-            echo -1;
+        $infoQuery = query($check, $dbHandle);
+        while($infoResult=$infoQuery->fetch_array()){
+            $userID = $infoResult['User_ID'];
+            $gender = $infoResult['Gender'];
+        }
+        $infoString =
+                "<user>
+                    <userID>$first</userID>
+                    <gender>$last</gender>
+                </user>";
         }
 
+        echo $infoString;
     break;
 
     case 'insert':
