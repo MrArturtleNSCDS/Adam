@@ -98,20 +98,6 @@ function checkInfo(first_, last_, email_){
             showElements(registry);
             hideElements(welcome);
         }
-       
-       
-        /* if(success==="0"){
-            console.log(success);
-            homey();
-            showElements(sidebar);
-        } else if(sucess==="1"){
-            
-        } else{
-            $("#fname").text(first_);
-            $("#lname").text(last_);
-            showElements(registry);
-            hideElements(welcome);
-        }*/
     });
 
     checkI.fail(function(jqXHR, textStatus) {

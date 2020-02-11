@@ -9,17 +9,21 @@ switch($action){
         $first = $_POST['firstCheck'];
         $last = $_POST['lastCheck'];
         $email = $_POST['emailCheck'];
+        
         $check = "SELECT * FROM `users` 
         WHERE First='$first' AND Last='$last' AND Email='$email'";
+        
         $infoQuery = query($check, $dbHandle);
-        while($infoResult=$infoQuery->fetch_array()){
+        
+        if($infoResult=$infoQuery->fetch_array()){
             $userID = $infoResult['User_ID'];
             $gender = $infoResult['Gender'];
         }
+        
         $infoString =
                 "<user>
-                    <userID>$first</userID>
-                    <gender>$last</gender>
+                    <userID>$userID</userID>
+                    <gender>$gender</gender>
                 </user>";
         }
 
