@@ -4,9 +4,9 @@
 	if(!defined('INCLUDE_CHECK')) 
 		die('You are not allowed to execute this file directly');
 
-    $dbHost = '127.0.0.1';
+    $dbHost = 'localhost';
 
-	$dbUser = 'adam';
+	$dbUser = 'Adam';
 	$dbPass = 'Basketball481234';
 	$dbDatabase = 'selleryShower'; 
 	

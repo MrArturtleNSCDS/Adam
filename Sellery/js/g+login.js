@@ -1,5 +1,5 @@
-var firstN;
-var lastN;
+var first_;
+var last_;
 var email_; 
 
 
@@ -8,6 +8,7 @@ function onSuccess(googleUser) {
     last_ = googleUser.getBasicProfile().getFamilyName();
     email_ = googleUser.getBasicProfile().getEmail();
     checkInfo(first_,last_,email_);
+    transition();
 }
     function onFailure(error) {
     console.log(error);

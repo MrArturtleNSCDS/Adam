@@ -87,15 +87,19 @@
                 </div>
 
                 <div id="home">
-                    <div id = "hello" class="Text" style="font-size:6vw;">Hello 
+                    <div id = "hello" class="Text" style="font-size:6vw;">Hello</div>
                     <div class="grid-container">
                         <div class="grid-item" style="font-size:3vw;">1</div>
                         <div class="grid-item" style="font-size:3vw;">2</div>
                         <div class="grid-item" style="font-size:3vw;">3</div>
                         <div class="grid-item" style="font-size:3vw;">4</div>
                         <div class="grid-item" style="font-size:3vw;">5</div>
-                        <div class="grid-item" style="font-size:3vw;" stall='1'></div>
-                        <div class="grid-item" style="font-size:3vw;" stall='2'></div>
+                        <div class="grid-item" style="font-size:3vw;" stall='1'>
+                        
+                        </div>
+                        <div class="grid-item" style="font-size:3vw;" stall='2'>
+                            <div class='stallUser'>First_ 15</div>
+                        </div>
                         <div class="grid-item" style="font-size:3vw;" stall='3'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='4'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='5'></div>
@@ -109,10 +113,10 @@
                     <div class="drop"></div>
                 </div>
                 <div id="contact">
-                    <div id="infoMain" class="Text" style="font-size:6vw;">My Contacts</div><br><br>
-                    <div class = "Text" style="font-size:5vw;">Email or text me if you have any questions!</div>
-                    <div class = "Text" style="font-size:5vw;">Email: ATerhaerdt20@nscds.org</div><br>
-                    <div class = "Text" style="font-size:5vw;">Phone: 484-707-8812</div>
+                    <div id="infoMain" class="Text" style="font-size:6vw;">My Contacts:</div><br><br><br>
+                    <div class = "contactText" style="font-size:5vw;">Email or text me if you have any questions!</div>
+                    <div class = "contactText" style="font-size:5vw;">Email: ATerhaerdt20@nscds.org</div><br>
+                    <div class = "contactText" style="font-size:5vw;">Phone: 484-707-8812</div>
 
                 </div>
             </div>

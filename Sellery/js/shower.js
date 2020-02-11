@@ -21,7 +21,6 @@ function hideElements(element){
 }
 
 function showElements(element){
-    console.log(element,element.length);
     $(element).delay(1800).fadeIn();
 }
 function signUp(){
@@ -85,25 +84,25 @@ function checkInfo(first_, last_, email_){
     });
 
     checkI.done(function(success){
-            userID = $(success).find('userID').text();
-            gender_ = $(success).find('gender').text();
-        
-        console.log(gender_);
-        if(gender_ >= 0){
-           hideElements(welcome);
-           showElements(homey);
-           //showElements(sidebar);
-           //$("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
-           //getShowerInfo();
-       } else{
-            $("#fname").text(first_);
-            $("#lname").text(last_);
-            showElements(registry);
-            hideElements(welcome);
-            change();
-        }
+        userID = $(success).find('userID').text();
+        gender_ = $(success).find('gender').text();
+    
+    console.log(gender_);
+    if(gender_ >= 0){
+       hideElements(welcome);
+       showElements(homey);
+       showElements(sidebar);
+       $("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
+       getShowerInfo();
+   } else{
+        $("#fname").text(first_);
+        $("#lname").text(last_);
+        showElements(registry);
+        hideElements(welcome);
+        change();
+    }
 function change(){
-    $("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
+$("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
 }
 
        
@@ -158,7 +157,6 @@ function insert(){
 }
 
 function getShowerInfo(){
-    console.log(gender_);
     var getInfo = $.ajax({
         url: "php/queries.php",
         type: "POST",
@@ -239,4 +237,3 @@ function waitingListInsert(stall_){
         alert( "Request failed: " + textStatus + " " + jqXHR.responseText);
     });
 }
-

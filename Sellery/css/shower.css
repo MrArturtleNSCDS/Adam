@@ -11,6 +11,13 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
+.contactText{
+  font-size: 3vh;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 .smallFont{
   font-size: 1.5vh;
   line-height: 1.5vh;
