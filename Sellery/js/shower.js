@@ -1,18 +1,19 @@
-var other = $("#forNow");
-var a = $("#signIn");
+var home = $("#home");
 var registry = $("#registerPage")
 var contact = $("#contact")
 var welcome = $("#signInPage");
-var info = $("#info");
+var sidebar = $("#sidebar1")
+var gender_;
+var userID_;
 
 startUp();
 
 function startUp(){
-    $(other).hide();
+    $(home).hide();
+    $(sidebar).hide();
     $(registry).hide();
     $(contact).hide();
     $(welcome).show();
-    $(info).hide();
 }
 
 function hideElements(element){
@@ -22,59 +23,108 @@ function hideElements(element){
 function showElements(element){
     $(element).delay(1800).fadeIn();
 }
-
-$("#home1").click(function(){
-    //transition();
+function signUp(){
     showElements(registry);
     hideElements(contact);
-    hideElements(other);
+    hideElements(home);
     hideElements(welcome);
     hideElements(info);
-});
-$('#info1').click(function(){
-    //transition();
+}
+
+function homey(){
     hideElements(registry);
     hideElements(contact);
-    hideElements(other);
+    showElements(home);
     hideElements(welcome);
-    showElements(info);
+}
+
+$("#home1").click(function(){
+    transition();
+    hideElements(registry);
+    hideElements(contact);
+    showElements(home);
+    hideElements(welcome);
 });
 $('#contact1').click(function(){
-    //transition();
+    transition();
     hideElements(registry);
     showElements(contact);
-    hideElements(other);
+    hideElements(home);
     hideElements(welcome);
-    showElements(info);
 });
 $('#logout1').click(function logOut(){
-    //transition();
+    transition();
     hideElements(registry);
-    showElements(contact);
-    hideElements(other);
-    hideElements(welcome);
-    hideElements(info);
+    hideElements(contact);
+    hideElements(home);
+    hideElements(sidebar);
+    showElements(welcome);
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
+
 });
-/*
+
 function transition(){
+
     $("#bar1").animate({height:"100%"},1500).delay(100).animate({height:0},2000);
     $("#bar2").delay(200).animate({height:"100%"},1500).delay(100).animate({height:0},2000);
     $("#bar3").delay(400).animate({height:"100%"},1500).delay(100).animate({height:0},2000);
     $("#bar4").delay(600).animate({height:"100%"},1500).delay(100).animate({height:0},2000);
 }
-*/
-function getName(){
-    var firstName = $("#first").val();
-    var lastName = $("#last").val();
-    console.log(firstName,lastName);
-    var isMale = ($('#genderCheckBox').prop('checked'));
+
+
+function checkInfo(first_, last_, email_){
+    var checkI = $.ajax({
+        url: "php/queries.php",
+        type: "POST",
+        data: {action:"check",firstCheck:first_, lastCheck:last_, emailCheck:email_},
+        dataType: "text"
+    });
+
+    checkI.done(function(success){
+       if(success >= 0){
+           gender_ = success;
+           hideElements(welcome);
+           showElements(homey);
+           showElements(sidebar);
+           getShowerInfo();
+       } else{
+            $("#fname").text(first_);
+            $("#lname").text(last_);
+            showElements(registry);
+            hideElements(welcome);
+        }
+       
+       
+        /* if(success==="0"){
+            console.log(success);
+            homey();
+            showElements(sidebar);
+        } else if(sucess==="1"){
+            
+        } else{
+            $("#fname").text(first_);
+            $("#lname").text(last_);
+            showElements(registry);
+            hideElements(welcome);
+        }*/
+    });
+
+    checkI.fail(function(jqXHR, textStatus) {
+        alert( "Request failed: " + textStatus + " " + jqXHR.responseText);
+    });
+}
+
+function insert(){
+    //var firstName = $("#first").val();
+    //var lastName = $("#last").val();
+    //console.log(firstName,lastName);
+    isMale = ($('#genderCheckBox').prop('checked'));
 
     if(isMale){
-        var gender_ = 1; 
+        gender_ = 1; 
       } else{
           gender_ = 0;
       }
@@ -82,7 +132,7 @@ function getName(){
     var requestName = $.ajax({
         url: "php/queries.php",
         type: "POST",
-        data: {action:"insert",first:firstName, last:lastName, gender:gender_},
+        data: {action:"insert",first:first_, last:last_, gender:gender_, email:email_},
         dataType: "text"
     });
 
@@ -98,19 +148,20 @@ function getName(){
 
 }
 
-function getInfo(){
-    var userId = $("#user").val();
+function getShowerInfo(){
     var getInfo = $.ajax({
         url: "php/queries.php",
         type: "POST",
-        data: {action:"recieve",user:userId},
+        data: {action:"showerInfo",gender:gender_},
         dataType: "xml"
     });
 
     getInfo.done(function(userXML){
+        
+        $('[stall]').html("");
+
         allUsers = $(userXML).find('user');
         console.log("Total Users:" + allUsers.length);
-
         allUsers.each(function(){
             var userFirst = $(this).find('first').text();
             var userLast = $(this).find('last').text();
@@ -119,15 +170,16 @@ function getInfo(){
             var userEndTime = $(this).find('end').text();
             var minutes = $(this).find('minutes').text();
             
-            console.log(minutes);
+            
+            if(userFirst.length + minutes.length > 8){
+                $('[stall=' + userStall + ']').append(
+                        "<div class='smallFont'>" + userFirst + "" +  "<br>" + minutes  + "min" + "</div>");
+            } else{
+                $('[stall=' + userStall + ']').append(
+                    "<div class='stallUser grid-item'>" + userFirst + "<br>" 
+                    +  minutes  + "</div>");
+            }
 
-            $('#container').append(
-                    "<div class='userFirst'>" + userFirst + "</div><br>" +
-                    "<div class='userLast'>" + userLast + "</div><br>" +
-                    "<div class='userStall'>" + userStall + "</div><br>" +
-                    "<div class='userStartTime'>" + userStartTime + "</div><br>" +
-                    "<div class='userEndTime'>" + userEndTime + "</div><br>" +
-                    "<div class='userEndTime'>" + minutes + "</div><br>");
         })
 
     });
@@ -137,21 +189,43 @@ function getInfo(){
     });
 }
 
-function checkInfo(first_, last_, email_){
-    var checkI = $.ajax({
+var stall_
+$("#1").click(function(){
+    stall_= 1;
+    waitingListInsert(stall_);
+});
+$("#2").click(function(){
+    stall_= 2;
+    waitingListInsert(stall_);
+});
+$("#3").click(function(){
+    stall_= 3;
+    waitingListInsert(stall_);
+});
+$("#4").click(function(){
+    stall_= 4;
+    waitingListInsert(stall_);
+});
+$("#5").click(function(){
+    stall_= 4;
+    waitingListInsert(stall_);
+});
+
+function waitingListInsert(stall_){
+    var waitingList = $.ajax({
         url: "php/queries.php",
         type: "POST",
-        data: {action:"check",firstCheck:first_, lastCheck:last_, emailCheck:email_},
+        data: {action:"waitingListInsert", stall:stall_},
         dataType: "text"
     });
 
-    checkI.done(function(success){
+    waitingList.done(function(success){
        // if(success==="1"){
             console.log(success);
         //}
     });
 
-    checkI.fail(function(jqXHR, textStatus) {
+    waitingList.fail(function(jqXHR, textStatus) {
         alert( "Request failed: " + textStatus + " " + jqXHR.responseText);
     });
 }
