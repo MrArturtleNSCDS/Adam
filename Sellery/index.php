@@ -1,5 +1,5 @@
 <?php
-	include "Php/connect.php";
+	include "php/connect.php";
 ?>
 
 <!DOCTYPE html>
@@ -7,6 +7,7 @@
     <head>
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="https://kit.fontawesome.com/f5406f8a6e.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
         <meta name="google-signin-scope" content="profile email">
@@ -28,7 +29,6 @@
             <div id="sidebar1">
                 <div class="sidebar">
                     <div id = "home1"><a href="#home"><i class="fas fa-home"></i> Home</a></div>
-                    <div id = "info1"><a href="#info"><i class="fas fa-address-card"></i><br>Info</a></div>
                     <div id = "contact1"><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></div>
                     <div id = "logout1"><a href="#logout"><i class="fas fa-sign-in-alt"></i><br>LogOut</a></div>
                 </div>
@@ -40,8 +40,8 @@
 
                 <div id="signInPage">
                     <div id="welcomeText" class="Text" style="font-size:8vw;">Hello!</div>
-                    <div id="welcomeText" class="Text" style="font-size:5vw;"><br>Sign in with Google</div>
-                    <div id="my-signin2"></div>
+                    <div id="welcomeText1" class="Text" style="font-size:5vw;"><br>Sign in with Google</div>
+                    <div id="my-signin2" style="display:inline-block;"></div>
                 </div>
 
 
@@ -53,7 +53,7 @@
                         <div id="areYou" class='Text' style="font-size:4vw;">What are you?</div>
                         <div id='boy' class='Text boygirl' style="font-size:3vw;">Boy</div>
                         <label class="switch">
-                            <input type="checkbox">
+                            <input id = "genderCheckBox" type="checkbox">
                             <span class="slider round"></span>
                         </label>
                         <div id='girl' class='Text boygirl' style="font-size:3vw;">Girl</div>
@@ -83,43 +83,41 @@
                             </label>
                         </div>
                     </div>
-                    <button id="sumbitB" button class="fsSubmitButton" style="font-size:5vw;">Submit</button>
+                    <button id="sumbitB" button class="fsSubmitButton" onClick = insert();homey() style="font-size:5vw;">Submit</button>
                 </div>
 
-                <div id="info">
-                    <div id = "infoParagraph" class="Text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt<br>
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris <br>
-                            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse <br>
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum. </p>
-                    </div>
-                </div>
-
-                <div id="forNow">
-                    <div id="time" class='Text' style="font-size:4vw;">Expected Time</div>
-                    <div class="box" style="font-size:4vw;">
-                        <select>
-                            <option>1 Minute</option>
-                            <option>5 Minutes</option>
-                            <option>10 Minutes</option>
-                            <option>15 Minutes</option>
-                            <option>30 Minutes</option>
-                            <option>I'm Going To Be A While</option>
-                        </select>
-                    </div>
+                <div id="home">
+                    <div id = "hello" class="Text" style="font-size:6vw;">Hello 
                     <div class="grid-container">
-                        <div class="grid-item" style="font-size:3vw;">Current Boy User</div>
-                        <div class="grid-item" style="font-size:3vw;" placeholder='None'>1</div>
+                        <div class="grid-item" style="font-size:3vw;">1</div>
                         <div class="grid-item" style="font-size:3vw;">2</div>
-                        <div class="grid-item" style="font-size:3vw;">Current Girl User</div>  
-                        <div class="grid-item" style="font-size:3vw;" placeholder='None'>1</div>
-                        <div class="grid-item" style="font-size:3vw;">2</div>
+                        <div class="grid-item" style="font-size:3vw;">3</div>
+                        <div class="grid-item" style="font-size:3vw;">4</div>
+                        <div class="grid-item" style="font-size:3vw;">5</div>
+                        <div class="grid-item" style="font-size:3vw;" stall='1'>
+                        
+                        </div>
+                        <div class="grid-item" style="font-size:3vw;" stall='2'>
+                            <div class='stallUser'>First_ 15</div>
+                        </div>
+                        <div class="grid-item" style="font-size:3vw;" stall='3'></div>
+                        <div class="grid-item" style="font-size:3vw;" stall='4'></div>
+                        <div class="grid-item" style="font-size:3vw;" stall='5'></div>
+                        <button id = "1" class = "button1">Sign in on Stall 1</button>
+                        <button id = "2" class = "button1">Sign in on Stall 2</button>
+                        <button id = "3" class = "button1">Sign in on Stall 3</button>
+                        <button id = "4" class = "button1">Sign in on Stall 4</button>
+                        <button id = "5" class = "button1">Sign in on Stall 5</button>
+
                     </div>
                     <div class="drop"></div>
                 </div>
                 <div id="contact">
-                    <div id="infoMain" class="Text" style="font-size:6vw;">My Contacts</div>
+                    <div id="infoMain" class="Text" style="font-size:6vw;">My Contacts</div><br><br>
+                    <div class = "Text" style="font-size:5vw;">Email or text me if you have any questions!</div>
+                    <div class = "Text" style="font-size:5vw;">Email: ATerhaerdt20@nscds.org</div><br>
+                    <div class = "Text" style="font-size:5vw;">Phone: 484-707-8812</div>
+
                 </div>
             </div>
         </div>
