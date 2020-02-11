@@ -198,32 +198,45 @@ function getShowerInfo(){
 }
 
 var stall_
-$("#1").click(function(){
-    stall_= 1;
-    waitingListInsert(stall_);
-});
-$("#2").click(function(){
-    stall_= 2;
-    waitingListInsert(stall_);
-});
-$("#3").click(function(){
-    stall_= 3;
-    waitingListInsert(stall_);
-});
-$("#4").click(function(){
-    stall_= 4;
-    waitingListInsert(stall_);
-});
-$("#5").click(function(){
-    stall_= 4;
-    waitingListInsert(stall_);
+$("[stallButton]").click(function(){
+    stall_= $(this).attr('stallButton');
+    console.log(stall_);
 });
 
-function waitingListInsert(stall_){
+
+$("#blah").click(function(){
+    console.log("submitted");
+    var hours = parseInt($("hours").val);
+    var minutes = parseInt($("minutes").val);
+    var time = hours + ":" + minutes;
+    var duration = parseInt($("duration").val);
+    var endtime;
+    var today = new Date();
+
+    var isChecked = $("#PM").prop("checked");
+    if(isChecked){
+        hours + 12;
+    }
+    if(duration > 60){
+        alert("That's too long of a shower!");
+    }
+    if(minutes + duration < 60){
+        endtime = hours + ":" + minutes+duration;
+    } else{
+        endtime = hours+1 + ":" + (minutes+duration) - 60;
+    }
+    var dateStart = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDay() + ' ' + time;
+    var dateEnd = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDay() + ' ' + endtime;
+    console.log(dateStart);
+    console.log(dateEnd);
+    waitingListInsert(stall_, dateStart, dateEnd);
+});
+
+function waitingListInsert(stall_, start_, end_){
     var waitingList = $.ajax({
         url: "php/queries.php",
         type: "POST",
-        data: {action:"waitingListInsert", stall:stall_, userID:userID_},
+        data: {action:"waitingListInsert", stall:stall_, userID:userID_, start:start_, end:end_},
         dataType: "text"
     });
 
