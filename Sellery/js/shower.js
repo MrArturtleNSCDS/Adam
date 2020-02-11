@@ -45,7 +45,6 @@ $("#home1").click(function(){
     showElements(home);
     hideElements(welcome);
 });
-
 $('#contact1').click(function(){
     transition();
     hideElements(registry);
@@ -53,7 +52,6 @@ $('#contact1').click(function(){
     hideElements(home);
     hideElements(welcome);
 });
-
 $('#logout1').click(function logOut(){
     transition();
     hideElements(registry);
@@ -82,22 +80,46 @@ function checkInfo(first_, last_, email_){
         url: "php/queries.php",
         type: "POST",
         data: {action:"check",firstCheck:first_, lastCheck:last_, emailCheck:email_},
-        dataType: "text"
+        dataType: "xml"
     });
 
     checkI.done(function(success){
-       if(success >= 0){
-           gender_ = success;
+        allUser = $(success).find('user');
+        allUser.each(function(){
+            var userID = $(this).find('User_ID').text();
+            var gender_ = $(this).find('Gender').text();
+        })
+        console.log(gender_);
+        if(gender_ >= 0){
            hideElements(welcome);
            showElements(homey);
            showElements(sidebar);
+           $("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
            getShowerInfo();
        } else{
             $("#fname").text(first_);
             $("#lname").text(last_);
             showElements(registry);
             hideElements(welcome);
+            change();
         }
+function change(){
+    $("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
+}
+
+       
+        /* if(success==="0"){
+            console.log(success);
+            homey();
+            showElements(sidebar);
+        } else if(sucess==="1"){
+            
+        } else{
+            $("#fname").text(first_);
+            $("#lname").text(last_);
+            showElements(registry);
+            hideElements(welcome);
+        }*/
     });
 
     checkI.fail(function(jqXHR, textStatus) {
@@ -217,3 +239,4 @@ function waitingListInsert(stall_){
         alert( "Request failed: " + textStatus + " " + jqXHR.responseText);
     });
 }
+
