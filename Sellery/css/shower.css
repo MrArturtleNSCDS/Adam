@@ -368,7 +368,17 @@ input:checked + .slider:before {
 }
  .custom-option.selected {
      color: #ffffff;
-     background-color: #305c91;
+     background-color:#305c91;
+  
+}
+
+#radioButtonModal{
+  width:10vh;
+  display:inline-block;
+}
+
+.in-linea{
+  display: inline-block;
 }
 
 /* The container */
