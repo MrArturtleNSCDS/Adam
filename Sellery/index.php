@@ -100,11 +100,11 @@
                         <div class="grid-item" style="font-size:3vw;" stall='3'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='4'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='5'></div>
-                        <button id = "1" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 1</button>
-                        <button id = "2" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 2</button>
-                        <button id = "3" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 3</button>
-                        <button id = "4" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 4</button>
-                        <button id = "5" class = "button1" button onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 5</button>
+                        <button id = "stall1" class = "button1" stallButton="1" onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 1</button>
+                        <button id = "stall2" class = "button1" stallButton="2" onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 2</button>
+                        <button id = "stall3" class = "button1" stallButton="3" onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 3</button>
+                        <button id = "stall4" class = "button1" stallButton="4" onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 4</button>
+                        <button id = "stall5" class = "button1" stallButton="5" onclick="document.getElementById('id01').style.display='block'">Sign in on Stall 5</button>
                     </div>
                     <div class="drop"></div>
                 </div>
@@ -123,19 +123,19 @@
                 <span onclick="document.getElementById('id01').style.display='none'"
                 class="w3-button w3-display-topright">&times;</span>
                 <p>Start</p>
-                <input type = "text" placeholder = "Hours" stlye = "width:2vh;height:2vh;"></input>
-                <input type = "text" placeholder = "Minutes" stlye = "width:2vh;height:2vh;"></input>
-                <div id="radioButton">
+                <input id = "hours" type = "text" class= "in-linea" placeholder = "H" style = "width:3vh;height:3vh;background-color:#C4012E">:</input>
+                <input id = "minutes" type = "text" class= "in-linea" placeholder = "Min" style = "width:4vh;height:3vh;background-color:#C4012E"></input>
+                <input id = "duration" type = "text" class= "in-linea" placeholder = "Duration" style = "width:10vh;height:3vh;background-color:#C4012E"></input>
+                <div id = "sumbitM">Sumbit</div>
+                <div id="radioButtonModal">
                             <label class="container modalRadioText" style="font-size:3vw;">AM
-                                <input type="radio" checked="checked" name="radio">
+                                <input type="radio" checked="checked" name="AMPM">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="container modalRadioText animate" style="font-size:3vw;">PM
-                                <input type="radio" name="radio">
+                                <input id = "PM" type="radio" name="AMPM">
                                 <span class="checkmark"></span>
                             </label>
-
-                <p>Some text in the Modal..</p>
             </div>
          </div>
 </div>
