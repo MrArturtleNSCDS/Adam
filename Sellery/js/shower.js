@@ -45,6 +45,7 @@ $("#home1").click(function(){
     showElements(home);
     hideElements(welcome);
 });
+
 $('#contact1').click(function(){
     transition();
     hideElements(registry);
@@ -52,6 +53,7 @@ $('#contact1').click(function(){
     hideElements(home);
     hideElements(welcome);
 });
+
 $('#logout1').click(function logOut(){
     transition();
     hideElements(registry);

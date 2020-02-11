@@ -94,12 +94,8 @@
                         <div class="grid-item" style="font-size:3vw;">3</div>
                         <div class="grid-item" style="font-size:3vw;">4</div>
                         <div class="grid-item" style="font-size:3vw;">5</div>
-                        <div class="grid-item" style="font-size:3vw;" stall='1'>
-                        
-                        </div>
-                        <div class="grid-item" style="font-size:3vw;" stall='2'>
-                            <div class='stallUser'>First_ 15</div>
-                        </div>
+                        <div class="grid-item" style="font-size:3vw;" stall='1'></div>
+                        <div class="grid-item" style="font-size:3vw;" stall='2'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='3'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='4'></div>
                         <div class="grid-item" style="font-size:3vw;" stall='5'></div>
