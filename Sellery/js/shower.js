@@ -204,7 +204,7 @@ $("[stallButton]").click(function(){
 });
 
 
-$("#blah").click(function(){
+$("#sumbitM").click(function(){
     console.log("submitted");
     var hours = parseInt($("hours").val);
     var minutes = parseInt($("minutes").val);
