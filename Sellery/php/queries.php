@@ -25,7 +25,6 @@ switch($action){
                     <userID>$userID</userID>
                     <gender>$gender</gender>
                 </user>";
-        }
 
         echo $infoString;
     break;
