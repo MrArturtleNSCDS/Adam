@@ -5,6 +5,18 @@ body{
     text-align: center;
 }
 
+.stallUser{
+  font-size: 2vh;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.smallFont{
+  font-size: 1.5vh;
+  line-height: 1.5vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
 #background{
     width: 10%;
 }
@@ -12,11 +24,6 @@ body{
 .moveGoogle{
   position:absolute;
   left:50px;
-}
-
-#my-signin2{
-    margin-top: 10px;
-    display: inline-block;
 }
 
 .bara{
@@ -94,55 +101,6 @@ body{
   .sidebar a {font-size: 18px;}
 }
 
-.box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.box select {
-  background-color: #C4012F;
-  color: white;
-  padding: 12px;
-  width: 250px;
-  border-radius: 10px;
-  border-color:white;
-  border-width: 2px;
-  font-family: 'Lobster', cursive;
-  font-size: 20px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  -webkit-appearance: button;
-  appearance: button;
-  outline: none;
-}
-
-.box::before {
-  content: "\f13a";
-  font-family: 'Lobster', cursive;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius:10px;
-  width: 20%;
-  height: 100%;
-  text-align: center;
-  font-size: 28px;
-  line-height: 45px;
-  color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
-  pointer-events: none;
-}
-
-.box:hover::before {
-  color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.box select option {
-  padding: 30px;
-}
-
 #time{
     margin:5%;
 }
@@ -178,9 +136,15 @@ margin: 15%;
     border-radius: 10px;
 }
 
+.grid-item.scroll{
+  overflow-x: hidden; 
+  overflow-y: auto;
+  text-align: center; 
+}
+
 .grid-container {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 20% 20% 20% 20% 20%;
   background-color: white;
   border-radius: 10px;
   margin-top:50px;
@@ -460,3 +424,21 @@ input:checked + .slider:before {
 	border-radius: 50%;
 	background: white;
 }
+
+.button1{
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  color:black;
+  text-align:center;
+  transition: all 0.2s;
+}
+.button1:hover{
+  color:black;
+  background-color:#C4012E;
+  }
