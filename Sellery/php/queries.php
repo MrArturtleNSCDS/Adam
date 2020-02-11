@@ -54,6 +54,9 @@ switch($action){
 
     case 'showerInfo':
         $gender = $_POST['gender'];
+        
+        
+        
         $infoString = "<users>";
         $getInfo =  "SELECT users.First, users.Last,
                     waiting_list.Stall, waiting_list.Start_Time, waiting_list.End_Time FROM `users` 

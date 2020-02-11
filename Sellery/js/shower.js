@@ -21,6 +21,7 @@ function hideElements(element){
 }
 
 function showElements(element){
+    console.log(element,element.length);
     $(element).delay(1800).fadeIn();
 }
 function signUp(){
@@ -84,16 +85,16 @@ function checkInfo(first_, last_, email_){
     });
 
     checkI.done(function(success){
-            var userID = $(success).find('userID').text();
-            var gender_ = $(success).find('gender').text();
+            userID = $(success).find('userID').text();
+            gender_ = $(success).find('gender').text();
         
         console.log(gender_);
         if(gender_ >= 0){
            hideElements(welcome);
            showElements(homey);
-           showElements(sidebar);
-           $("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
-           getShowerInfo();
+           //showElements(sidebar);
+           //$("#hello").text("Hello" + " " + first_ + " " + last_ + "!");
+           //getShowerInfo();
        } else{
             $("#fname").text(first_);
             $("#lname").text(last_);
@@ -157,6 +158,7 @@ function insert(){
 }
 
 function getShowerInfo(){
+    console.log(gender_);
     var getInfo = $.ajax({
         url: "php/queries.php",
         type: "POST",
