@@ -84,11 +84,9 @@ function checkInfo(first_, last_, email_){
     });
 
     checkI.done(function(success){
-        allUser = $(success).find('user');
-        allUser.each(function(){
-            var userID = $(this).find('User_ID').text();
-            var gender_ = $(this).find('Gender').text();
-        })
+            var userID = $(success).find('userID').text();
+            var gender_ = $(success).find('gender').text();
+        
         console.log(gender_);
         if(gender_ >= 0){
            hideElements(welcome);
