@@ -48,10 +48,12 @@ switch($action){
     case 'waitingListInsert':
         $stall = $_POST['stall'];
         $userID = $_POST['userID'];
+        $start = $_POST['start'];
+        $end = $_POST['end'];
 
         $insertWaitingList =
-                            "INSERT INTO waiting_list (Stall, User_ID) 
-                            VALUES ('$stall', '$userID')";
+                            "INSERT INTO waiting_list (Stall, User_ID, Start_Time, End_Time) 
+                            VALUES ('$stall', '$userID', '$start', '$end')";
 
         query($insertWaitingList, $dbHandle);
         
