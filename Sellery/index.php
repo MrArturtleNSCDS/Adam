@@ -63,31 +63,6 @@
                         </label>
                         <div id='girl' class='Text boygirl' style="font-size:3vw;">Female</div>
                     </div>
-                    <!--<div id="timeE">
-                        <div id="timeExpected" class='Text' style="font-size:4vw;">How Long Does Your Shower Usually Take?</div>
-                        <div id="radioButton">
-                            <label class="container Text" style="font-size:3vw;">One Minute
-                                <input type="radio" checked="checked" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container Text animate" style="font-size:3vw;">Five Minutes
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container Text" style="font-size:3vw;">Ten Minutes
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container Text" style="font-size:3vw;">Fifteeen Minutes
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container Text" style="font-size:3vw;">Twenty Minutes
-                                <input type="radio" name="radio">
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                    </div>-->
                     <button id="sumbitB" button class="fsSubmitButton" onClick = insert();homey() style="font-size:5vw;">Submit</button>
                 </div>
 
