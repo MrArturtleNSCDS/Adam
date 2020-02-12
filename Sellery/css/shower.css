@@ -431,6 +431,11 @@ input:checked + .slider:before {
   display: inline-block;
 }
 
+#radioButtonModal{
+  width:10vh;
+  display:inline-block;
+}
+
 /* The container */
 .container {
   display: block;
