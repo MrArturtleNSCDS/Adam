@@ -125,8 +125,8 @@
                 <p>Start</p>
                 <input type = "text" placeholder = "Hours" stlye = "width:2vh;height:2vh;"></input>
                 <input type = "text" placeholder = "Minutes" stlye = "width:2vh;height:2vh;"></input>
-                <div id="radioButton">
-                            <label class="container modalRadioText" style="font-size:3vw;">AM
+                <div id="radioButtonModal">
+                            <label class="container modalRadioText" style="font-size:3vw;">AM Hello
                                 <input type="radio" checked="checked" name="radio">
                                 <span class="checkmark"></span>
                             </label>
