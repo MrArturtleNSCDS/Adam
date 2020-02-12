@@ -9,9 +9,14 @@ switch($action){
         $first = $_POST['firstCheck'];
         $last = $_POST['lastCheck'];
         $email = $_POST['emailCheck'];
+        $gender = -1;
+        $userID = -1;
         
-        $check = "SELECT * FROM `users` 
+        //echo "$first $last $email";
+        
+        $check = "SELECT * FROM users
         WHERE First='$first' AND Last='$last' AND Email='$email'";
+        
         
         $infoQuery = query($check, $dbHandle);
         
@@ -20,13 +25,12 @@ switch($action){
             $gender = $infoResult['Gender'];
         }
         
-        $infoString =
+        echo
                 "<user>
                     <userID>$userID</userID>
                     <gender>$gender</gender>
                 </user>";
 
-        echo $infoString;
     break;
 
     case 'insert':
@@ -35,7 +39,6 @@ switch($action){
         $gender = $_POST['gender'];
         $email = $_POST['email'];
             
-        echo "$firstname $lastname";
         $insertName = 
                     "INSERT INTO users (First, Last, Gender, Email) 
                     VALUES ('$firstname','$lastname','$gender', '$email')";
@@ -48,10 +51,16 @@ switch($action){
     case 'waitingListInsert':
         $stall = $_POST['stall'];
         $userID = $_POST['userID'];
+        
+        $start = date('Y-m-d H:i:s',strtotime($_POST['start']));
+        $duration = $_POST['duration'];
+        
+        $end = date('Y-m-d H:i:s', strtotime($start) + $duration*60);
+        
 
         $insertWaitingList =
-                            "INSERT INTO waiting_list (Stall, User_ID) 
-                            VALUES ('$stall', '$userID')";
+                            "INSERT INTO waiting_list (Stall, User_ID, Start_Time, End_Time) 
+                            VALUES ('$stall', '$userID', '$start', '$end')";
 
         query($insertWaitingList, $dbHandle);
         
@@ -64,7 +73,7 @@ switch($action){
         $getInfo =  "SELECT users.First, users.Last,
                     waiting_list.Stall, waiting_list.Start_Time, waiting_list.End_Time FROM `users` 
                     INNER JOIN waiting_list ON users.User_ID = waiting_list.User_ID
-                    WHERE Gender = $gender";
+                    WHERE Gender = $gender ORDER By Start_Time";
         $infoQuery = query($getInfo, $dbHandle);
         while($infoResult=$infoQuery->fetch_array()){ 
                 $first = $infoResult['First'];
