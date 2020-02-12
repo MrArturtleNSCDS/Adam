@@ -6,41 +6,9 @@ body{
 }
 
 .stallUser{
-    font-size: 2vh;
-    color:white;
-    font-family: 'Montserrat', sans-serif;
-    overflow: hidden;
-    padding: .1vh;
-    margin-bottom: .5vh;
-}
-
-.stallUser .minutes{
-    font-size: 1vh;
-    background-color: white;
-    padding: .1vh;
-    border-radius: .4vh;
-    color: #a10328;
-}
-
-.w3-modal .title{
-    padding: 5px 0;
-}
-
-div.w3-container{
-    
-}
-
-.w3-modal input{
-    text-align: right;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    border-radius: 4px;
-    margin: 5px;
-    width: 90px;
-}
-
-.w3-modal .durationpicker{
-    width: 60px;
+  font-size: 2vh;
+  color:white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .modalRadioText{
@@ -58,6 +26,8 @@ div.w3-container{
 
 .smallFont{
   font-size: 1.5vh;
+  line-height: 1.5vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #background{
@@ -101,25 +71,22 @@ div.w3-container{
 
 .campusPic{
     max-width: 100%;
+    height:20%;
     opacity: 1.2;
     -webkit-filter: grayscale(25%); 
       filter: grayscale(25%);
 }
 
-#header{
-    height: 20%;
-    overflow: hidden;
-    position: relative;
-}
-
 .sidebar {
   height: 100%;
-  position: absolute;
+  width: 78px;
+  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
+  padding-top: 16px;
 }
 
 .sidebar a {
@@ -153,39 +120,33 @@ div.w3-container{
 
 .fsSubmitButton
 {
-    padding: 10px 20px 11px !important;
-    background-color: #C4012F;
-    font-weight: bold;
-    font-family: 'Lobster', cursive; 
-    text-shadow: 1px 1px black;
-    color: #ffffff;
-    border-radius: 100px;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    border: 1px solid #C4012F;
-    cursor: pointer;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+padding: 10px 20px 11px !important;
+background-color: #C4012F;
+font-weight: bold;
+font-family: 'Lobster', cursive; 
+text-shadow: 1px 1px black;
+color: #ffffff;
+border-radius: 100px;
+-moz-border-radius: 100px;
+-webkit-border-radius: 100px;
+border: 1px solid #C4012F;
+cursor: pointer;
+box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+margin: 15%;
 }
 
 .grid-item {
     background-color: #C4012F;
     border: 1px solid white;
+    padding: 10px;
+    margin:3px;
+    font-size: 30px;
     color: white;
     font-family: 'Lobster', cursive; 
     text-align: center;
     border-radius: 10px;
-}
-
-.grid-header{
-    padding: 0 4px;
-}
-
-.grid-stall{
-    padding: 10px 4px;
-    font-size: 30px;
-    min-height: 150px;
 }
 
 .grid-item.scroll{
@@ -220,7 +181,7 @@ div.w3-container{
 }
 
 #logWrapper{
-    width: 90%;
+    width: 50%;
     position: absolute;
     display:block;
     top: 10px;
@@ -411,17 +372,6 @@ input:checked + .slider:before {
   
 }
 
-.modalHeader{
-    background-color: #c4012f;
-    color: #fff;
-}
-
-.w3-modal button{
-    margin: 2px;
-    border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
-}
-
 #radioButtonModal{
   width:10vh;
   display:inline-block;
@@ -499,20 +449,19 @@ input:checked + .slider:before {
 }
 
 .button1{
-    border:1px solid #421721;
-    margin: 0.6em;
-    border-radius:0.5em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    color:#fff;
-    text-align:center;
-    transition: all 0.8s;
-    background-color: #7b1029;
-    cursor: pointer;
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  color:black;
+  text-align:center;
+  transition: all 0.2s;
 }
 .button1:hover{
-    color:white;
-    background-color:#C4012E;
-    margin: .6em .3em;
-}
+  color:black;
+  background-color:#C4012E;
+  }
