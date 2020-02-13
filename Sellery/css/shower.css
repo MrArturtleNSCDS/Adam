@@ -26,10 +26,6 @@ body{
     padding: 5px 0;
 }
 
-div.w3-container{
-    
-}
-
 .w3-modal input{
     text-align: right;
     font-family: 'Montserrat', sans-serif;
@@ -55,6 +51,10 @@ div.w3-container{
   font-family: 'Montserrat', sans-serif;
 }
 
+#userPicture{
+  width:46px;
+  height:46px;
+}
 
 .smallFont{
   font-size: 1.5vh;

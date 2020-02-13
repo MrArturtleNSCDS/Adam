@@ -7,6 +7,9 @@ function onSuccess(googleUser) {
     first_ = googleUser.getBasicProfile().getGivenName();
     last_ = googleUser.getBasicProfile().getFamilyName();
     email_ = googleUser.getBasicProfile().getEmail();
+    userPic_ = googleUser.getBasicProfile().getImageUrl();
+    $("#userPicture").attr("src", userPic_);
+    console.log(userPic_);
     checkInfo(first_,last_,email_);
     transition();
 }

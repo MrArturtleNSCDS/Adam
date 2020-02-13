@@ -32,10 +32,11 @@
             </div>
             <div id="header">
                 <img src="images/Madison.jpg" class= "campusPic" alt="campusP">
-                <div class="sidebar">
+                <div id = "sidebar1" class="sidebar">
                     <div id = "home1"><a href="#home"><i class="fas fa-home"></i></a></div>
                     <div id = "contact1"><a href="#contact"><i class="fas fa-envelope"></i></a></div>
                     <div id = "logout1"><a href="#logout"><i class="fas fa-sign-in-alt"></i></a></div>
+                    <img id = "userPicture" src = "">
                 </div>
             </div>
             <div id='logWrapper'>
@@ -69,11 +70,11 @@
                 <div id="home">
                     <div id = "hello" class="Text" style="font-size:6vw;">Hello</div>
                     <div class="grid-container">
-                        <div class="grid-item grid-header" style="font-size:3vw;">1</div>
-                        <div class="grid-item grid-header" style="font-size:3vw;">2</div>
-                        <div class="grid-item grid-header" style="font-size:3vw;">3</div>
-                        <div class="grid-item grid-header" style="font-size:3vw;">4</div>
-                        <div class="grid-item grid-header" style="font-size:3vw;">5</div>
+                        <div class="grid-item grid-header" style="font-size:3vw;">Stall 1</div>
+                        <div class="grid-item grid-header" style="font-size:3vw;">Stall 2</div>
+                        <div class="grid-item grid-header" style="font-size:3vw;">Stall 3</div>
+                        <div class="grid-item grid-header" style="font-size:3vw;">Stall 4</div>
+                        <div class="grid-item grid-header" style="font-size:3vw;">Stall 5</div>
                         <div class="grid-item grid-stall scroll" style="font-size:3vw;" stall='1'></div>
                         <div class="grid-item grid-stall scroll" style="font-size:3vw;" stall='2'></div>
                         <div class="grid-item grid-stall scroll" style="font-size:3vw;" stall='3'></div>

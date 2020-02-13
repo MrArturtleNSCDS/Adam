@@ -133,6 +133,7 @@ function insert(){
         console.log(success);
        if(success==="1"){
            transition();
+           checkInfo(first_,last_, email_);
            getShowerInfo();
         }
     });
